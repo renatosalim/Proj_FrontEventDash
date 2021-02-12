@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script type="text/javascript" src="eventos.js"></script>
+    <title>.: EventDash :.</title><br>
+
+    <style>
+        .container{
+            border: 3px solid rgb(255, 145,0);
+            width: 100%;
+            white-space: nowrap;
+            background-color: white;
+        }
+
+            body {
+            background-image: linear-gradient(#DCDCDC, #FFF 200px);
+            background-repeat: no-repeat;
+        }
+
+    </style>
+
+</head>
+
+<body onload="validaUser()">
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="relatorio.html"><img src="img/logo.jpg" width="100" height="100"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="alarmes.html">Alarmes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="equipamentos.html">Equipamentos</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Eventos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" href="eventos.html">Por Data</a></li>
+                      <li><a class="dropdown-item" href="eventoporequip.html">Por ID de equipamento</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" onclick="logout()">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3> Event Dashboard </h3>
+                <br>
+            </div>
+        </div>
+
+        <div class="row" id="botao2">
+            <div class="col-3">
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">Voltar</button>
+            </div>
+
+            <div class="col-9">
+                <button type="button" class="btn btn-primary" onclick="logout()">Logout</button>
+            </div>
+        </div><br>
+
+        <div class="col-12">
+            <h4> Relatório de Eventos </h4>
+        </div>
+
+        <div class="row" >
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="txtDataInicio" class="form-label"><b>Data Inicio</b></label>
+                    <input type="date" class="form-control" id="txtDataInicio">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="txtDataFim" class="form-label"><b>Data Fim</b></label>
+                    <input type="date" class="form-control" id="txtDataFim">
+                </div>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-6" id="botao1">
+                <button type="button" class="btn btn-primary" onclick="gerarRelatorio()">Gerar Relatório</button>
+            </div> 
+            
+                <div class="col-6 text-center" id="botao3">
+                    <button type="button" class="btn btn-primary" onclick="imprimir()">Gerar PDF</button>
+                </div>
+            
+        </div>
+
+        <div id="relatorio">
+            ** aqui preciso preencher o relatorio ***
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
